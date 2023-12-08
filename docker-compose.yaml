@@ -1,0 +1,38 @@
+version: '3'
+
+networks:
+  shareme:
+
+services:
+  web:
+    build: .
+    image: ecommerce-app:1.0
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      DJANGO_SETTINGS_MODULE: ecommerce.settings
+    volumes:
+      - .:/app
+    networks:
+      shareme:
+        aliases:
+          - pg_db
+  postgres:
+    image: postgres:12
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+#    volumes:
+#      - ./postgres_data:/var/lib/postgresql/data
+    networks:
+      shareme:
+        aliases:
+          - pg_db
+
+
+volumes:
+  static:
+  media:

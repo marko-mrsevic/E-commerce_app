@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "maka-e-commerce"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+black = "^23.1.0"
+psycopg2-binary = "^2.9.5"
+djangorestframework = "^3.14.0"
+django = "^4.1.7"
+djangorestframework-simplejwt = "^5.2.2"
+django-filter = "^23.2"
+stripe = "^5.4.0"
+drf-yasg = "^1.21.7"
+
+
+[build-system]
+requires = ["poetry-core>=1.5.1"]
+build-backend = "poetry.core.masonry.api"
